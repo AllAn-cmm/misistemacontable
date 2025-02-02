@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Contable</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Para los gráficos -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Gestión Contable</h1>
+        </header>
+
+        <!-- Formulario de login -->
+        <section id="login-section">
+            <h2>Iniciar sesión</h2>
+            <form id="login-form">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+        </section>
+
+        <!-- Formulario de operaciones contables (visible al estar logueado) -->
+        <section id="operations-section" class="hidden">
+            <h2>Registrar Operación Contable</h2>
+            <form id="operations-form">
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" name="descripcion" required>
+
+                <label for="monto">Monto:</label>
+                <input type="number" id="monto" name="monto" required>
+
+                <label for="tipo">Tipo de operación:</label>
+                <select id="tipo" name="tipo">
+                    <option value="ingreso">Ingreso</option>
+                    <option value="gasto">Gasto</option>
+                </select>
+                
+                <button type="submit">Registrar</button>
+            </form>
+        </section>
+
+        <!-- Gráfico de balance -->
+        <section id="chart-section" class="hidden">
+            <h2>Gráfico de Balance</h2>
+            <canvas id="balanceChart"></canvas>
+        </section>
+
+        <section id="balance-section" class="hidden">
+            <h2>Balance General</h2>
+            <p id="balance"></p>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
